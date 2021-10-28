@@ -1,1 +1,1 @@
-web: gunicorn wheels.wsgi --log-file --
+web: gunicorn wheels.wsgi

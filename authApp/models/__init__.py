@@ -1,2 +1,1 @@
-from .user import User
-from .manager import Manager
+from .travel import Travel

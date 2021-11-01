@@ -1,3 +1,4 @@
-from .user_view import UserView
-from .user_view import UserListCreateView
-from .user_view import UserRetrieveUpdateDeleteView
+# Travel
+from .travel_view import TravelListCreateView
+from .travel_view import TravelRetrieveUpdateDeleteView
+from .travel_view import TravelFkView

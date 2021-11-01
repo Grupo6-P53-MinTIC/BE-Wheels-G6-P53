@@ -1,1 +1,1 @@
-from .user_serializer import UserSerializer
+from .travel_serializer import TravelSerializer

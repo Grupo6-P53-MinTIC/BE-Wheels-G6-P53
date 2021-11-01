@@ -1,30 +1,23 @@
-"""wheels URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
-from authApp.views import  UserView, UserListCreateView, UserRetrieveUpdateDeleteView
+from django.views.generic import TemplateView
+# Import Travel Views
+from authApp.views import TravelListCreateView, TravelRetrieveUpdateDeleteView, TravelFkView
+
 from django.urls import path, include
 from django.contrib.sites.models import Site
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', UserListCreateView.as_view()),
-    path('user/<int:pk>', UserRetrieveUpdateDeleteView.as_view()),
+    # Travel routes 
+    path('travels/', TravelListCreateView.as_view()),
+    path('travel/<int:pk>', TravelRetrieveUpdateDeleteView.as_view()),
+    path('travel_by/<int:id_manager>', TravelFkView.as_view()), #Search travel by fk
+    # Rest-auth routes
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', include('rest_auth.registration.urls'))
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('auth/confirm-email/', TemplateView.as_view(), name='account_email_verification_sent'),
 ]
 
 admin.site.unregister(Site)

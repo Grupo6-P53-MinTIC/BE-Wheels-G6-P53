@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'wheels.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deqpbsffiv57us',
-        'USER': 'trxssgvwkpoflk',
-        'PASSWORD': '09aec0f7d26b1882b7d4e8d37efc620d0e97cdaabec39cea66f0493bc4106541',
-        'HOST': 'ec2-18-211-236-255.compute-1.amazonaws.com',
+        'NAME': 'd16ks9d3gjktk',
+        'USER': 'ublhlwmjpqulwo',
+        'PASSWORD': 'c49e8270bd30566aa08bfa69bce0f831865940cf499b13e1dcc9d4bcdc9e79f7',
+        'HOST': 'ec2-3-208-157-78.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
